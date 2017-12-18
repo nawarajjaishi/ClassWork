@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Applet;
+package applet;
 
-import java.awt.Graphics;
 import java.applet.*;
+import java.awt.*;
 
 /**
  *
  * @author Jaction76
  */
-public class AppletDemo1 extends Applet {
+public class AppletDemo extends Applet{
     public void paint(Graphics g){
      g.drawString("Hello World",150,100);
     }
-    
 }
