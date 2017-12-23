@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Events;
+package AWT;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -12,19 +12,19 @@ import java.awt.event.*;
  *
  * @author Jaction76
  */
-public class AWTListenerDemo {
+public class KeyEventsDemo {
    private Frame mainFrame;
    private Label headerLabel;
    private Label statusLabel;
    private Panel controlPanel;
    private TextField textField;
    
-   public AWTListenerDemo(){
+   public KeyEventsDemo(){
       prepareGUI();
    }
 
    public static void main(String[] args){
-      AWTListenerDemo awtListenerDemo = new AWTListenerDemo();  
+      KeyEventsDemo awtListenerDemo = new KeyEventsDemo();  
       awtListenerDemo.showKeyListenerDemo();
    }
 
