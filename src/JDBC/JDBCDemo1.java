@@ -16,7 +16,6 @@ public class JDBCDemo1 {
     ResultSet rs;
     Connection con;
     Statement stmt;
-    PreparedStatement pstmt = null;
     Scanner sn = new Scanner(System.in);
     int choice;
     //here college  is database name, root is username and password 
@@ -45,9 +44,9 @@ public class JDBCDemo1 {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, uname, password);
-
+            stmt = con.createStatement();
             if (choice == 1) {
-                if (pstmt.executeUpdate() >= 0) {
+                if (stmt.executeUpdate(query)!=-1) {
                     System.out.println("Your Data Update Successfully");
                 } else {
                     System.out.println("Error Occured During Inserting Data ");
@@ -91,13 +90,10 @@ public class JDBCDemo1 {
         String sCLZName = sn.next();
         System.out.println("Enter Your Address :");
         String sAddress = sn.next();
-        String query = "INSERT INTO student VALUES(?,?,?,?,?)";
-        pstmt = con.prepareStatement(query);
-        pstmt.setString(1, sName);
-        pstmt.setString(2, sRollNO);
-        pstmt.setString(3, sSection);
-        pstmt.setString(4, sCLZName);
-        pstmt.setString(5, sAddress);
+
+        String query = "INSERT INTO student(sName,sRollNo,sSection,sClzName,sAddress)"
+                + " VALUES('" + sName + "','" + sRollNO + "','" + sSection + "','" + sCLZName + "','" + sAddress + "')";
+
         connection(query);
         connectionTerminate(con, stmt);
     }

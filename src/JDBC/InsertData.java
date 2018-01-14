@@ -44,7 +44,7 @@ public class InsertData {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);  
-            pstmt = con.prepareStatement(query);
+            pstmt = con.prepareStatement(query);            
             
             pstmt.setInt(1,0);
             pstmt.setString(2, firstName);
@@ -59,7 +59,7 @@ public class InsertData {
             }else{
                 System.out.println("Error Occured While Date Inserting Into Database !!!");
             }
-             con.close();
+            con.close();
             pstmt.close();
 
         } catch (Exception e) {
