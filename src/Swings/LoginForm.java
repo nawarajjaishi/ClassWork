@@ -37,7 +37,7 @@ public class LoginForm {
         jf.add(userNameLbl);
 
         emailLbl = new JLabel("Email: ");
-        emailLbl.setBounds(50, 170, 100, 10);
+        emailLbl.setBounds(200, 170, 100, 10);
         jf.add(emailLbl);
         
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

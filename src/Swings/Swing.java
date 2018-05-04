@@ -9,39 +9,18 @@ package Swings;
  *
  * @author Jaction76
  */
-import com.sun.java.swing.plaf.motif.MotifLookAndFeel;
-import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
+import java.awt.*;
+import java.awt.event.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.swing.ButtonGroup;
-
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-//import javax.swing.JComboBox;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-import javax.swing.LookAndFeel;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.metal.MetalLookAndFeel;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
-import org.jvnet.substance.skin.SubstanceEmeraldDuskLookAndFeel;
 import org.jvnet.substance.skin.SubstanceGreenMagicLookAndFeel;
-import org.jvnet.substance.skin.SubstanceMagmaLookAndFeel;
-import org.jvnet.substance.skin.SubstanceMistAquaLookAndFeel;
-import org.jvnet.substance.skin.SubstanceNebulaBrickWallLookAndFeel;
+
 
 
 public class Swing extends JFrame {
@@ -189,21 +168,6 @@ public class Swing extends JFrame {
 
     }
 
-    /*private void saveData(){
-        
-     System.out.println("Username:"+usernametext.getText());
-     System.out.println("Email:"+emailtext.getText());
-     System.out.println("Gender:"+newgen.getSelection().getActionCommand());
-     System.out.println("Role:"+newrole.getSelection().getActionCommand());
-     if(bim.isSelected()){
-     System.out.println("Faculty: BIM");
-     }
-     if(bit.isSelected()){
-     System.out.println("Faculty: BIT");
-     }
-        
-        
-     }*/
     private void save() {
 
         String un = usernametext.getText();

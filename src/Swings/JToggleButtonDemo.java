@@ -17,21 +17,25 @@ import javax.swing.JToggleButton;
  * @author Jaction76
  */
 public class JToggleButtonDemo {
+    String status="ON";
 
     public JToggleButtonDemo() {
         JFrame frame = new JFrame("JToggleButton DEMO");
         frame.setSize(200, 200);
 
         frame.setLayout(new FlowLayout());
+        
         JLabel l1 = new JLabel("Button is off");
-        JToggleButton jtbtn = new JToggleButton("on/off");
+        JToggleButton jtbtn = new JToggleButton(status);
         jtbtn.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (jtbtn.isSelected()) {
                     l1.setText("button is on");
+                    status="ON";
                 } else {
                     l1.setText("button is off");
+                    status="OFF";
                 }
             }
         });

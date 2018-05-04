@@ -30,7 +30,7 @@ public class LoginFrame {
         fm.setSize(600, 600);
         fm.setTitle("Login Frame");
         fm.setLayout(null);
-        fm.setVisible(true); 
+        fm.setVisible(true);
         MenuBar();
         creatUI();
     }
@@ -65,6 +65,7 @@ public class LoginFrame {
 
     private void creatUI() {
         errorlabel = new Label();
+
         UserName_lebel = new Label("Username");
         UserName_lebel.setBounds(100, 200, 80, 30);
         UserName_lebel.setBackground(Color.gray);
@@ -176,33 +177,6 @@ public class LoginFrame {
 
     }
 
-    private void myenuBar() {
-        mymenubar = new MenuBar();
-        Menu menu1 = new Menu("College");
-        Menu submenu = new Menu("Kist");
-        MenuItem i1 = new MenuItem("Shanker Dev");
-        MenuItem i2 = new MenuItem("Asian");
-        MenuItem i3 = new MenuItem("Apex");
-        MenuItem i4 = new MenuItem("Kastamandap");
-        MenuItem i5 = new MenuItem("BBA");
-        MenuItem i6 = new MenuItem("BIM");
-        MenuItem i7 = new MenuItem("BBS");
-        submenu.add(i5);
-        submenu.add(i6);
-        submenu.add(i7);
-        menu1.add(i1);
-        menu1.add(i2);
-        menu1.add(i3);
-        menu1.add(i4);
-        menu1.add(submenu);
-        Menu menu2 = new Menu("Teachers");
-        Menu menu3 = new Menu("Students");
-        mymenubar.add(menu1);
-        mymenubar.add(menu2);
-        mymenubar.add(menu3);
-        fm.setMenuBar(mymenubar);
-    }
-
     public static void main(String[] args) {
         LoginFrame lf = new LoginFrame();
 
@@ -212,7 +186,7 @@ public class LoginFrame {
         String dbmsurl = "jdbc:mysql://localhost:3306/college";
         String dbmsUsernamename = "root";
         String dbmspassword = "";
-        String query = "SELECT * FROM admin WHERE aUserName = '"+userName+"' and aPassword = '"+password+"'";
+        String query = "SELECT * FROM admin WHERE aUserName = '" + userName + "' and aPassword = '" + password + "'";
         String adminName = "";
         String adminPassword = "";
 
@@ -221,10 +195,10 @@ public class LoginFrame {
             Connection con = DriverManager.getConnection(dbmsurl, dbmsUsernamename, dbmspassword);
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
-            
+
             if (rs.next()) {
                 openNewFrame();
-            }else {
+            } else {
                 errorlabel.setText("Invalid Username or Password!");
                 errorlabel.setBounds(360, 240, 300, 30);
                 errorlabel.setForeground(Color.red);
@@ -237,9 +211,10 @@ public class LoginFrame {
             System.out.println(e);
         }
     }
+
     private void openNewFrame() {
         NewFrame nf = new NewFrame(UserText.getText());
-        nf.setVisible(true);        
+        nf.setVisible(true);
         fm.dispose();
     }
 

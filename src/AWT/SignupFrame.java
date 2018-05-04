@@ -35,16 +35,13 @@ public class SignupFrame extends Frame {
 
         //add texe field for input
         usernametxt = new TextField();
-
         gbc.gridx = 1;
         gbc.gridy = 0;
         add(usernametxt, gbc);
 
         //add label for show the text label      
         email = new Label("Email:");
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipadx = 0;
-        gbc.ipady = 0;
+                
         gbc.gridx = 0;
         gbc.gridy = 1;
         add(email, gbc);
@@ -57,7 +54,7 @@ public class SignupFrame extends Frame {
 
         // Role choice support choice selection option idems
         role = new Label("Role:");
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        
         gbc.gridx = 0;
         gbc.gridy = 2;
         add(role, gbc);
@@ -72,13 +69,14 @@ public class SignupFrame extends Frame {
         add(rolechoice, gbc);
 
         gender = new Label("Gender:");
+        
         gbc.gridx = 0;
         gbc.gridy = 3;
         add(gender, gbc);
 
         //Radiobuttons
         gendercbgroup = new CheckboxGroup();
-        malecb = new Checkbox("Male", gendercbgroup, false);
+        malecb = new Checkbox("Male", gendercbgroup, true);
         gbc.gridx = 1;
         gbc.gridy = 3;
         add(malecb, gbc);
@@ -95,12 +93,13 @@ public class SignupFrame extends Frame {
 
         //faculty and its choice 
         faculty = new Label("Faculty:");
+        gbc.fill=GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy = 4;
         add(faculty, gbc);
 
         //Checkboxes
-        bimcb = new Checkbox("BIM");
+        bimcb = new Checkbox("BIM",true);
         gbc.gridx = 1;
         gbc.gridy = 4;
         add(bimcb, gbc);
@@ -111,7 +110,7 @@ public class SignupFrame extends Frame {
         add(bitcb, gbc);
 
         save = new Button("Save");
-
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy = 5;
         add(save, gbc);

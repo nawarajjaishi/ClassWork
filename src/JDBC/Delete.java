@@ -7,6 +7,7 @@ package JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -31,22 +32,24 @@ public class Delete {
         Scanner sn = new Scanner(System.in);
 
         System.out.println("From Which ID You Want To Delete Record");
-        String id = sn.next();
+        int id = sn.nextInt();
         
         String query = "DELETE FROM consumer "                
-                + "WHERE id = "+id+"";
+                + "WHERE id = ?";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-            stmt = con.createStatement();
-            if (stmt.executeUpdate(query) != -1) {
+//            stmt = con.createStatement();
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setInt(1, id);
+            if (pstmt.executeUpdate() != -1) {
                 System.out.println("Delete Successfuly");
             } else {
                 System.out.println("Error Occured While Deleting Data");
             }
 
             con.close();
-            stmt.close();
+            pstmt.close();
         } catch (Exception e) {
             System.out.println(e);
         }

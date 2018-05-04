@@ -31,7 +31,7 @@ public class APPWindow {
 
     public APPWindow() {
         frm = new Frame("This is Implementation of Mouse LIstner in Frame");
-        
+
         frm.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent me) {
@@ -75,7 +75,7 @@ public class APPWindow {
                 mouseX = 0;
                 mouseY = 10;
                 mousemsg = "Mouse Exited";
-                
+
                 frm.repaint();
             }
         });
@@ -90,8 +90,9 @@ public class APPWindow {
         frm.setSize(300, 200);
         frm.setVisible(true);
         frm.addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosing(WindowEvent we) {
-                System.exit(0);
+                frm.dispose();
             }
         });
 
@@ -100,11 +101,11 @@ public class APPWindow {
     public void paint(Graphics g) {
         g.drawString(keymsg, 10, 40);
         g.drawString(mousemsg, mouseX, mouseY);
-        
+
     }
 
     public static void main(String[] args) {
         APPWindow apw = new APPWindow();
-        
+
     }
 }
